@@ -11,7 +11,15 @@ COPY . /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Set the environment variable for Flask
-ENV FLASK_APP=app.py
+ENV FLASK_APP=app.py 
+
+# Add labels to the image
+# LABEL Formatting Option 1
+LABEL "com.example.vendor"="Big Star Colletibles"
+LABEL version="1.0"
+LABEL decription="The Big Start Colletibles Website\
+    using the Python base image."
+
 
 # Run the command to start the Flask application
 CMD ["flask", "run", "--host=0.0.0.0"]
